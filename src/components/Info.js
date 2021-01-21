@@ -12,7 +12,7 @@ const UserInfo = () => {
       id: 1,
       icon: <GoRepo className="icon"></GoRepo>,
       label: "repos",
-      value: public_gists,
+      value: public_repos,
       color: "pink",
     },
     {
@@ -62,8 +62,6 @@ const Item = ({ icon, label, value, color }) => {
 
 const Wrapper = styled.section`
   
-
-
 `;
 
 export default UserInfo;
