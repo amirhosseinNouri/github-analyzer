@@ -62,6 +62,8 @@ const Item = ({ icon, label, value, color }) => {
 
 const Wrapper = styled.section`
   
+
+
 `;
 
 export default UserInfo;
