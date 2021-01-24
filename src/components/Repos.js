@@ -42,34 +42,23 @@ const Repos = () => {
     (total, current) => {
       const { stargazers_count, name, forks } = current;
       total.stars[stargazers_count] = { label: name, value: stargazers_count };
+      total.forks[forks] = {label : name , value : forks}
       return total;
     },
     { stars: {}, forks: {} }
   );
   stars = Object.values(stars).slice(-5).reverse()
+  forks = Object.values(forks).slice(-5).reverse()
 
   // STEP 2 - Chart Data
-  const chartData = [
-    {
-      label: "HTML",
-      value: "13",
-    },
-    {
-      label: "Css",
-      value: "23",
-    },
-    {
-      label: "JavaScript",
-      value: "80",
-    },
-  ];
+
   return (
     <section className="section">
       <Wrapper className="section-center">
         <Pie3D data={mostUsed}></Pie3D>
         <Column3D data={stars}></Column3D>
         <Doughnut2D data={mostPopular}></Doughnut2D>
-        <Bar3D data={chartData}></Bar3D>
+        <Bar3D data={forks}></Bar3D>
       </Wrapper>
     </section>
   );
