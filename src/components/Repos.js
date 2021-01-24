@@ -27,8 +27,6 @@ const Repos = () => {
     })
     .slice(0, 5);
 
-
-
   // Most Stars per language
   const mostPopular = Object.values(languages)
     .sort((a, b) => {
@@ -38,7 +36,6 @@ const Repos = () => {
       return { ...item, value: item.stars };
     })
     .slice(0, 5);
-
 
   // STEP 2 - Chart Data
   const chartData = [
@@ -61,7 +58,7 @@ const Repos = () => {
         <Pie3D data={mostUsed}></Pie3D>
         <Column3D data={chartData}></Column3D>
         <Doughnut2D data={mostPopular}></Doughnut2D>
-        <div></div>
+        <Bar3D></Bar3D>
       </Wrapper>
     </section>
   );
