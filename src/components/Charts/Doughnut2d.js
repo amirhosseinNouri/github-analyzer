@@ -28,12 +28,11 @@ const ChartComponent = ({ data }) => {
     dataSource: {
       // Chart Configuration
       chart: {
-        caption : "Stars Per Language",
-        decimals : 0,
-        doughnutRadius : "45%",
-        showPercentValues : 0,
-        theme : "candy"
-        
+        caption: "Stars Per Language",
+        decimals: 0,
+        doughnutRadius: "45%",
+        showPercentValues: 0,
+        theme: "candy",
       },
       // Chart Data
       data,
