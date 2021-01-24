@@ -37,6 +37,17 @@ const Repos = () => {
     })
     .slice(0, 5);
 
+  // stars, forks
+  let { stars, forks } = repos.reduce(
+    (total, current) => {
+      const { stargazers_count, name, forks } = current;
+      total.stars[stargazers_count] = { label: name, value: stargazers_count };
+      return total;
+    },
+    { stars: {}, forks: {} }
+  );
+  stars = Object.values(stars).slice(-5).reverse()
+
   // STEP 2 - Chart Data
   const chartData = [
     {
@@ -56,7 +67,7 @@ const Repos = () => {
     <section className="section">
       <Wrapper className="section-center">
         <Pie3D data={mostUsed}></Pie3D>
-        <Column3D data={chartData}></Column3D>
+        <Column3D data={stars}></Column3D>
         <Doughnut2D data={mostPopular}></Doughnut2D>
         <Bar3D data={chartData}></Bar3D>
       </Wrapper>
