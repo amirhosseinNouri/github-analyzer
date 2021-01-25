@@ -16,12 +16,11 @@ const GithubProvider = ({ children }) => {
 
   //request loading
   const [requests, setRequests] = useState(0);
-  const [loading, setIsLoading] = useState(false);
+  const [loading, setIsLoading] = useState(true);
   //error
   const [error, setError] = useState({ show: false, message: "" });
 
   const searchGithubUsers = async (user) => {
-
     toggleError();
     setIsLoading(true);
     const response = await axios
@@ -32,6 +31,7 @@ const GithubProvider = ({ children }) => {
     } else {
       toggleError(true, "There is no user with that usename");
     }
+    checkRequest()
     setIsLoading(false);
   };
 
@@ -65,6 +65,7 @@ const GithubProvider = ({ children }) => {
         requests,
         error,
         searchGithubUsers,
+        loading
       }}
     >
       {children}
