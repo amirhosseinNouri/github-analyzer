@@ -16,7 +16,7 @@ const GithubProvider = ({ children }) => {
 
   //request loading
   const [requests, setRequests] = useState(0);
-  const [loading, setIsLoading] = useState(true);
+  const [loading, setIsLoading] = useState(false);
   //error
   const [error, setError] = useState({ show: false, message: "" });
 
@@ -28,10 +28,19 @@ const GithubProvider = ({ children }) => {
       .catch((error) => console.log(error));
     if (response) {
       setGithubUser(response.data);
+      const { login, followers_url } = response.data;
+      //repos
+      axios
+        .get(`${rootUrl}/users/${login}/repos?per_page=100`)
+        .then((response) => setRepos(response.data));
+      //followers
+      axios
+        .get(`${followers_url}?per_page=100`)
+        .then((response) => setFollowers(response.data));
     } else {
       toggleError(true, "There is no user with that usename");
     }
-    checkRequest()
+    checkRequest();
     setIsLoading(false);
   };
 
@@ -65,7 +74,7 @@ const GithubProvider = ({ children }) => {
         requests,
         error,
         searchGithubUsers,
-        loading
+        loading,
       }}
     >
       {children}
