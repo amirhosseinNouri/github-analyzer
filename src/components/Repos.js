@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { GithubContext } from "../context/context";
-import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from "./Charts";
+import { Pie3D, Column3D, Bar3D, Doughnut2D } from "./Charts";
 const Repos = () => {
   const { repos } = React.useContext(GithubContext);
   const languages = repos.reduce((total, current) => {
@@ -10,10 +10,6 @@ const Repos = () => {
     if (!total[language]) {
       total[language] = { label: language, value: 1, stars: stargazers_count };
     } else {
-      // total[language] = {
-      //   ...total[language],
-      //   value: total[language].value + 1,
-      // };
       total[language].value++;
       total[language].stars = total[language].stars + stargazers_count;
     }
@@ -42,13 +38,13 @@ const Repos = () => {
     (total, current) => {
       const { stargazers_count, name, forks } = current;
       total.stars[stargazers_count] = { label: name, value: stargazers_count };
-      total.forks[forks] = {label : name , value : forks}
+      total.forks[forks] = { label: name, value: forks };
       return total;
     },
     { stars: {}, forks: {} }
   );
-  stars = Object.values(stars).slice(-5).reverse()
-  forks = Object.values(forks).slice(-5).reverse()
+  stars = Object.values(stars).slice(-5).reverse();
+  forks = Object.values(forks).slice(-5).reverse();
 
   // STEP 2 - Chart Data
 

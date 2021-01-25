@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { isAuthenticated, user } = useAuth0();
-  const [isUser, setIsUser] = React.useState(isAuthenticated && user)
+  const [isUser] = React.useState(isAuthenticated && user)
   
 
   if (isUser) {
