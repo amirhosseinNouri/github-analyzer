@@ -10,9 +10,18 @@ const GithubContext = React.createContext();
 
 const GithubProvider = ({ children }) => {
   // States
-  const [githubUser, setGithubUser] = React.useState(mockUser);
-  const [repos, setRepos] = React.useState(mockRepos);
-  const [followers, setFollowers] = React.useState(mockFollowers);
+  const [githubUser, setGithubUser] = useState(mockUser);
+  const [repos, setRepos] = useState(mockRepos);
+  const [followers, setFollowers] = useState(mockFollowers);
+
+  //request loading
+  const [requests, setRequests] = useState(0)
+  const [loading, setIsLoading] = useState(false)
+  // Error
+
+  useEffect(() => {
+    console.log('app loaded');
+  } , [])
 
   return (
     <GithubContext.Provider value={{ githubUser, repos, followers }}>
