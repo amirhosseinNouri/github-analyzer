@@ -4,7 +4,7 @@ import { MdSearch } from "react-icons/md";
 import { GithubContext } from "../context/context";
 const Search = () => {
   const [user, setUser] = React.useState("");
-  const { requests } = React.useContext(GithubContext);
+  const { requests, error } = React.useContext(GithubContext);
   // get things from contexct
 
   const handleSubmit = (event) => {
@@ -16,6 +16,11 @@ const Search = () => {
   return (
     <section className="section">
       <Wrapper className="section-center">
+        {error.show && (
+          <ErrorWrapper>
+            <p>{error.message}</p>
+          </ErrorWrapper>
+        )}
         <form onSubmit={handleSubmit}>
           <div className="form-control">
             <MdSearch></MdSearch>
@@ -35,6 +40,7 @@ const Search = () => {
 };
 
 const Wrapper = styled.div`
+  position: relative;
   display: grid;
   gap: 1rem 1.75rem;
   @media (min-width: 768px) {
@@ -42,7 +48,6 @@ const Wrapper = styled.div`
     align-items: center;
     h3 {
       padding: 0 0.5rem;
-      border: 1px solid red;
     }
   }
   .form-control {
@@ -105,6 +110,21 @@ const Wrapper = styled.div`
     margin-bottom: 0;
     color: var(--clr-grey-5);
     font-weight: 400;
+  }
+`;
+
+const ErrorWrapper = styled.article`
+  text-align : center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  transform: translateY(-100%);
+  text-transform: capitalize;
+  p {
+    color: red;
+    letter-spacing: var(--spacing);
   }
 `;
 
