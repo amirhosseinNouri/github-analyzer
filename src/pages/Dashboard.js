@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <main>
       {/* <Navbar></Navbar> */}
-      {/* <Search></Search> */}
+      <Search></Search>
       <Info></Info>
       <User></User>
       <Repos></Repos>
