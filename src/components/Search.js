@@ -102,8 +102,10 @@ const Wrapper = styled.div`
       button,
       input,
       svg {
-        font-size: 0.85rem;
+        font-size: 1rem;
       }
+
+      
     }
   }
 
@@ -111,6 +113,12 @@ const Wrapper = styled.div`
     margin-bottom: 0;
     color: var(--clr-grey-5);
     font-weight: 400;
+  }
+
+  @media (min-width : 800px){
+    h3{
+      font-size : 1.3rem;
+    }
   }
 `;
 
