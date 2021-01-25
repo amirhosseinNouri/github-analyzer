@@ -77,12 +77,18 @@ const Wrapper = styled.section`
     grid-template-columns: auto 1fr;
     column-gap: 3rem;
     align-items: center;
+    transition: var(--transition);
     span {
       width: 3rem;
       height: 3rem;
       display: grid;
       place-items: center;
       border-radius: 50%;
+    }
+
+    &:hover {
+      box-shadow : 2px 2px 0 0 rgba(0,0,0,0.2);
+
     }
   }
   .icon {
