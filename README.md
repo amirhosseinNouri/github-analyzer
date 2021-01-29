@@ -13,14 +13,13 @@ Check out the final result [here](https://amirhosseinnouri-github-search-users.n
 
 I used [Github API](https://docs.github.com/en/rest) to get data.
 - [Root Endpoint](https://api.github.com)
-- [Get User](https://api.github.com/users/wesbos)
-- [Repos](https://api.github.com/users/john-smilga/repos?per_page=100)
-- [Followers](https://api.github.com/users/john-smilga/followers)
+- [Get User](https://api.github.com/users/USER_NAME)
+- [Repos](https://api.github.com/users/USER_NAME/repos?per_page=100)
+- [Followers](https://api.github.com/users/USER_NAME/followers)
 - [Rate Limit](https://api.github.com/rate_limit)
 
  For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
  
- Thanks to [Roozbeh](https://github.com/rsharifnasab) for initial data.
 
 ## Styled Components
 
