@@ -71,6 +71,7 @@ const Wrapper = styled.div`
       color: var(--clr-grey-3);
       text-transform: capitalize;
       letter-spacing: var(--spacing);
+
     }
     button {
       border-color: transparent;

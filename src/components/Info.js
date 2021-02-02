@@ -66,7 +66,7 @@ const Wrapper = styled.section`
   gap: 1rem 2rem;
 
   @media screen and (min-width: 640px) {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1f1));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   }
 
   .item {
