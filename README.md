@@ -1,4 +1,4 @@
-# Github Search Users
+# Github Analyzer
 
 Search your Github username and get interesting results about your repositories and projects.
 
