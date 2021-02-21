@@ -35,6 +35,7 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.nav`
+width : 98vw;
   padding: 1.5rem;
   margin-bottom: 4rem;
   background-color: var(--clr-white);

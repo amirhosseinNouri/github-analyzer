@@ -22,7 +22,7 @@ const Followers = () => {
 };
 
 const Wrapper = styled.article`
-
+max-width : 90vw;
   background-color: var(--clr-white);
   border-top-right-radius : var(--radius);
   border-bottom-right-radius : var(--radius);

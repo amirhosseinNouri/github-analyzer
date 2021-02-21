@@ -32,7 +32,7 @@ const Card = () => {
   </Wrapper>;
 };
 const Wrapper = styled.article`
-
+  max-width : 98vw;
   background-color : var(--clr-white);
   padding : 1.5rem 2rem;
   border-top-right-radius : var(--radius);

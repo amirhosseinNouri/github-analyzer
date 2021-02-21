@@ -61,6 +61,8 @@ const Item = ({ icon, label, value, color }) => {
 };
 
 const Wrapper = styled.section`
+  max-width: 1140;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem 2rem;
@@ -87,8 +89,7 @@ const Wrapper = styled.section`
     }
 
     &:hover {
-      box-shadow : 2px 2px 0 0 rgba(0,0,0,0.2);
-
+      box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.2);
     }
   }
   .icon {

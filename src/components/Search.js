@@ -4,13 +4,15 @@ import { MdSearch } from "react-icons/md";
 import { GithubContext } from "../context/context";
 const Search = () => {
   const [user, setUser] = React.useState("");
-  const { requests, error ,searchGithubUsers, loading } = React.useContext(GithubContext);
+  const { requests, error, searchGithubUsers, loading } = React.useContext(
+    GithubContext
+  );
   // get things from contexct
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (user) {
-      searchGithubUsers(user)
+      searchGithubUsers(user);
       setUser("");
     }
   };
@@ -66,17 +68,17 @@ const Wrapper = styled.div`
       letter-spacing: var(--spacing);
       color: var(--clr-grey-3);
       padding: 0.25rem 0.5rem;
+      width: 0;
     }
     input::placeholder {
       color: var(--clr-grey-3);
       text-transform: capitalize;
       letter-spacing: var(--spacing);
-
     }
     button {
       border-color: transparent;
       border-radius: 5px;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 4vw;
       text-transform: capitalize;
       letter-spacing: var(--spacing);
       background-color: var(--clr-primary-5);
@@ -99,14 +101,15 @@ const Wrapper = styled.div`
       font-size: 1.3rem;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 768px) {
       button,
       input,
       svg {
         font-size: 1rem;
       }
-
-      
+      button {
+        padding: 0.25rem 0.5rem;
+      }
     }
   }
 
@@ -116,15 +119,15 @@ const Wrapper = styled.div`
     font-weight: 400;
   }
 
-  @media (min-width : 800px){
-    h3{
-      font-size : 1.3rem;
+  @media (min-width: 800px) {
+    h3 {
+      font-size: 1.3rem;
     }
   }
 `;
 
 const ErrorWrapper = styled.article`
-  text-align : center;
+  text-align: center;
   position: absolute;
   width: 100%;
   top: 0;
