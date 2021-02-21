@@ -55,8 +55,10 @@ const Wrapper = styled.div`
   }
   .form-control {
     background-color: var(--clr-white);
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    /* display: grid; */
+    /* grid-template-columns: auto 1fr auto; */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     column-gap: 0.5rem;
     border-radius: 5px;
@@ -69,6 +71,7 @@ const Wrapper = styled.div`
       color: var(--clr-grey-3);
       padding: 0.25rem 0.5rem;
       width: 0;
+      flex-grow: 1;
     }
     input::placeholder {
       color: var(--clr-grey-3);
