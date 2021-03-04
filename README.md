@@ -59,6 +59,6 @@ I used Auth0 to handle the identity and login/logout process.
 
 ## TODO
 
-- [ ] Get a follower data by clicking on follower panel.
+- [X] Get a follower data by clicking on follower panel.
 - [X] Fix input width on small devices
 
