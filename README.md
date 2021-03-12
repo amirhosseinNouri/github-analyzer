@@ -6,7 +6,7 @@ I used React and React Hook for this project.
 
 This project is a practice for [React Tutorial and Projects Course](https://www.udemy.com/course/react-tutorial-and-projects-course/).
 
-Check out the final result [here](https://amirhosseinnouri-github-search-users.netlify.app/) (you should probably use a VPN).
+Check out the final result [here](https://github-analyzer-react.netlify.app/) (you should probably use a VPN).
 
 
 ## Gihthub API
